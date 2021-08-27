@@ -12,7 +12,7 @@ const configureStore = () => {
     ? compose(applyMiddleware(...Middlewares))
     : composeWithDevTools(applyMiddleware(...Middlewares))
     const Store = createStore(reducer,enhancer)
-    Store.sageTask = sagaMiddlewares.run(rootSaga) // server side rendering 
+    Store.sagaTask = sagaMiddlewares.run(rootSaga) // server side rendering 
     return Store
 }
 
