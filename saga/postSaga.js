@@ -12,6 +12,7 @@ function* getPosts(){
     // API 통신 web server랑 통신을 하게될겁니다. fetch axios 
     try{
         const {data} = yield call(getPostAPI)
+        console.log(data)
         yield put({
             type:'GET_POSTS_SUCCESS',
             data
