@@ -20,12 +20,12 @@ const reducer = (state = initalState,action) => {
         case GET_POSTS_REQUEST:
             return {
                 ...state,
-                posts:[...state.posts,...action.data],
                 loadding:true
             }
         case GET_POSTS_SUCCESS:
             return {
                 ...state,
+                posts:[...state.posts,...action.data],
                 loadding:false,
             }
         case GET_POSTS_FAIL:

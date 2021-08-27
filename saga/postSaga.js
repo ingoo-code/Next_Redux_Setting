@@ -1,5 +1,10 @@
 import {all,fork,takeLatest,call,put} from 'redux-saga/effects'
 import axios from 'axios'
+import {
+    GET_POSTS_REQUEST,
+    GET_POSTS_SUCCESS,
+    GET_POSTS_FAIL
+} from '../reducers/post'
 
 let BaseURL = process.env.NODE_ENV.backurl || 'https://jsonplaceholder.typicode.com'
 
@@ -14,19 +19,19 @@ function* getPosts(){
         const {data} = yield call(getPostAPI)
         console.log(data)
         yield put({
-            type:'GET_POSTS_SUCCESS',
+            type:GET_POSTS_SUCCESS,
             data
         })
     } catch (e) {
         yield put({
-            type:'GET_POST_FAIL',
+            type:GET_POSTS_FAIL,
             data:'ERROR'
         })
     }
 }
 
 function* watchPosts(){
-    yield takeLatest('GET_POST_REQUEST',getPosts)
+    yield takeLatest(GET_POSTS_REQUEST,getPosts)
 }
 
 export default function* postSaga(){

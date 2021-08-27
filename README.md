@@ -40,11 +40,17 @@ npm install babel-plugin-styled-components
 ```
 
 > Components - 화면을 구성하는 최소단위들
+
 > Layouts - header 컴포넌트, footer 컴포넌트 , Navigation 
+
 > Providers - Store내용을 Theme 
+
 > reducers - actions 내용과 reducer 내용을 넣는 디렉토리
+
 > saga - redux middle ware 인 saga내용을 넣는 디렉토리
+
 > pages - 페이지의 화면의 대표화면에 대한 컴포넌트
+
 > utils - 커스텀 hook이라던가 데이터 정리할수있는 코드들
 
 
@@ -94,3 +100,10 @@ action.type에 따른 state를 바꾸는 작업을 함
 
 
 
+# 사용방법은
+
+```
+cd [프로젝트명]
+npm install
+npm run dev
+```
